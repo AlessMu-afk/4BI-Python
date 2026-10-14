@@ -38,3 +38,20 @@ with open("lista.txt", "a", encoding="utf-8") as f:
     f.write("banane\n")
 
 ###con "x" crea e scrive, se il file esiste già da errore
+
+###Gestione file CSV
+
+import csv
+
+with open("modelli.csv", "w", encoding="utf-8", newline="") as f:
+    f.write('Marca,Modello,Prezzo\n')
+    f.write('Ford,"Fiesta, 5 porte",3074\n')
+
+with open("modelli.csv", "r", encoding="utf-8") as f:
+    for riga in f:
+        print(riga.strip().split(","))
+
+print("--- con il modulo csv ---")
+with open("modelli.csv", "r", encoding="utf-8", newline="") as f:
+    for campi in csv.reader(f):
+        print(campi)
