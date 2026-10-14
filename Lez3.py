@@ -55,3 +55,9 @@ print("--- con il modulo csv ---")
 with open("modelli.csv", "r", encoding="utf-8", newline="") as f:
     for campi in csv.reader(f):
         print(campi)
+
+###csv.reader(f) si comporta come il file: lo metti in un for e ti dà una lista di campi alla volta. next() preleva la prima riga, l'intestazione.
+
+###csv.DictReader usa la prima riga come chiavi e ti restituisce un dizionario per ogni record.
+
+###auto["Price"] si legge da solo. E se domani qualcuno sposta una colonna, il programma continua a funzionare: cerca per nome, non per posizione.
